@@ -1,0 +1,30 @@
+<exp> ::= <aexp> | <bexp> | <cexp>
+	 | <exp> <asym> <exp>
+   | <exp> <bsym> <exp>
+   | <exp> <csym> <exp>
+   | "(" <exp> <asym> <var> ")"
+   | "(" <exp> <bsym> <var> ")"
+   | "(" <exp> <csym> <var> ")"
+	 | " " <exp>
+	 | <exp> " "
+   | "(" <exp> ")"
+<aexp> ::= <var> <asym> <var> 
+	 | " " <var>
+	 | <var> " "
+<bexp> ::= <var> <bsym> <var> 
+	 | "!" <bexp>
+   | "!(" <bexp> ")"
+	 | " " <var>
+	 | <var> " "
+   | "(" <bexp> ")"
+<cexp> ::= <var> <csym> <var> 
+	 | " " <var>
+   | "!(" <cexp> ")"
+	 | "!" <cexp>
+	 | <var> " "
+   |"(" <cexp> ")"
+<num> ::= [0-9]+
+<var> ::= ([a-z] | [A-Z] | [0-9])+
+<asym> ::= "+" | "-" | "*" | "/"
+<csym> ::= "<" | ">" | "=="
+<bsym> ::= "&&" | "||" 
